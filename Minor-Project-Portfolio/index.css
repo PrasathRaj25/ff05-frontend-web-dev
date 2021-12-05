@@ -1,0 +1,291 @@
+:root {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  --margin-top: 4rem;
+}
+@media screen and (max-width: 500px) {
+  :root {
+    font-size: 2.8vmin;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+nav {
+  background-color: #e1701a;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--margin-top);
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 1;
+}
+nav > .title {
+  font-size: 1.5rem;
+  margin: 0 1.5rem 0 1rem;
+}
+nav > .lnk {
+  padding: 0.7rem;
+  margin: 0.5rem;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s ease;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  height: 1.5rem;
+}
+nav > .push {
+  margin-left: auto;
+}
+nav > .lnk:hover {
+  background-color: #c56317;
+}
+
+nav > .lnk:active {
+  background-color: #a34b08;
+}
+nav > .logo {
+  width: 2.2rem;
+  height: 2.2rem;
+  margin: 0.5rem 0 0.5rem 1rem;
+  filter: drop-shadow(0 0 5px rgb(65, 65, 65));
+}
+
+.content {
+  margin: 0;
+  padding: 0;
+  margin-top: var(--margin-top);
+}
+.content .title {
+  font-size: 3rem;
+  padding: 0.5rem;
+  margin: 1rem;
+}
+.content .subtitle {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  margin: 1rem;
+}
+.content .text {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  margin: 1rem;
+}
+.content > section {
+  scroll-margin-top: var(--margin-top);
+  margin: 0;
+  padding: 2rem;
+  min-height: 35rem;
+  position: relative;
+  background-size: contain, contain;
+  background-repeat: no-repeat, repeat;
+  color: rgb(54, 54, 54);
+}
+.floating-slip {
+  min-height: 10rem;
+  position: absolute;
+  padding: 1.5rem;
+}
+.content > .introduction {
+  background-image: url(./home.jpg), linear-gradient(#f8d042, #fed845, #f6cf43);
+  background-position: left;
+}
+.content > .introduction > div {
+  position: absolute;
+  color: rgb(65, 65, 65);
+  top: 50%;
+  left: 60%;
+  transform: translate(-60%, -50%);
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.356);
+  animation: slide 2.5s ease;
+}
+@keyframes slide {
+  0% {
+    left: 30%;
+    transform: translate(-30%, -50%);
+  }
+  100% {
+    left: 60%;
+    transform: translate(-60%, -50%);
+  }
+}
+.content > #about {
+  background-image: url(about.jpg), linear-gradient(#001a29, #091c29, #10202d);
+  background-position: left;
+  color: white;
+}
+.content > #about > div {
+  top: 50%;
+  right: 40%;
+  transform: translate(50%, -50%);
+  text-align: center;
+  background-color: rgba(7, 7, 7, 0.747);
+  border-radius: 3rem;
+}
+.content > #project {
+  background-color: #212121;
+  background-image: #000000;
+  color: white;
+  background-position: right;
+  text-align: center;
+}
+.content > #project .pgrid {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin: 5rem 0;
+}
+@media screen and (max-width: 88rem) {
+  .content > #project .pgrid {
+    grid-template-columns: auto;
+  }
+}
+.content > #project .pgrid .text {
+  font-size: 1.7rem;
+}
+.content > #project .pgrid > a {
+  background-color: rgba(221, 221, 221, 0.301);
+  margin: 2rem;
+  padding: 3rem;
+  border-radius: 3rem;
+  text-decoration: none;
+  color: white;
+  transition: box-shadow 0.5s ease;
+}
+.content > #project .pgrid > a:hover {
+  box-shadow: 0 0 15px white;
+}
+.content > #project .pgrid > a > img {
+  width: 35rem;
+  margin: auto;
+  display: block;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.content > #message {
+  text-align: center;
+  background-color: #d5d4cf;
+  background-image: url(contact-unsplash.jpg);
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 1rem;
+}
+.content > #message form {
+  max-width: 35rem;
+  margin: auto;
+  text-align: left;
+  padding: 1rem 4rem;
+  background-color: rgba(255, 255, 255, 0.623);
+  border-radius: 1rem;
+}
+.content > #message form label,
+.content > #message form input,
+.content > #message form textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+.content > #message form input,
+.content > #message form textarea {
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  resize: vertical;
+  box-shadow: 0 0 5px #c25e129a;
+  border: none;
+  outline: none;
+  padding: 1rem;
+}
+.content > #message form input[type='submit'] {
+  box-shadow: unset;
+  background-color: #e1701a;
+  margin: 1rem auto;
+  width: 30%;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.content > #message form input[type='submit']:hover {
+  background-color: #c56317;
+}
+
+.content > #message form input[type='submit']:active {
+  background-color: #a34b08;
+}
+
+.content > #message form label {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+@media screen and (max-width: 1000px) {
+  .content > #about,
+  .content > #project {
+    background-size: cover;
+    background-position: center;
+  }
+  .content > #about > div,
+  .content > .introduction > div {
+    background-color: rgba(255, 255, 255, 0.356);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: unset;
+    width: 80%;
+    transform: translate(-50%, -50%);
+  }
+  .content > #about > div {
+    background-color: rgba(7, 7, 7, 0.747);
+  }
+}
+#contact {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  padding: 3rem;
+  background-color: #1d2854;
+  min-height: 20rem;
+}
+#contact > .icons {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+#contact > .icons > a {
+  padding: 0.5rem;
+  text-decoration: none;
+  color: white;
+}
+#contact > .icons > .text {
+  margin: 0.2rem;
+}
+#contact > .icons svg {
+  width: 3rem;
+  height: 3rem;
+}
+button {
+  background-color: #e1701a;
+  padding: 1rem;
+  color: black;
+  transition: background-color 0.3s ease;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 1rem;
+  margin: 3rem;
+}
+button:hover {
+  background-color: #c56317;
+}
+
+button:active {
+  background-color: #a34b08;
+}
